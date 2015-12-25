@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         mainLayer.masksToBounds = true;
         view.layer.addSublayer(mainLayer)
 
-        var layer = CALayer()
+        let layer = CALayer()
         layer.bounds = CGRect(x: 0, y: 0, width: 8, height: 40)
         layer.position = CGPoint(x: 10, y: 75)
         layer.cornerRadius = 2
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         mainLayer.addSublayer(layer)
 
 
-        var animation = CABasicAnimation(keyPath: "position.y")
+        let animation = CABasicAnimation(keyPath: "position.y")
         animation.repeatCount = Float.infinity
         animation.toValue = layer.position.y - 25
         animation.autoreverses = true
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         mainLayer.instanceDelay = duration / Double(count)
         view.layer.addSublayer(mainLayer)
 
-        var layer = CALayer()
+        let layer = CALayer()
         layer.bounds = CGRect(x: 0, y: 0, width: 14, height: 14)
         layer.position = CGPointMake(100, 40)
         layer.borderColor = UIColor.blackColor().CGColor
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         layer.cornerRadius = 2.0
         mainLayer.addSublayer(layer)
 
-        var animation = CABasicAnimation(keyPath: "transform.scale")
+        let animation = CABasicAnimation(keyPath: "transform.scale")
         animation.repeatCount = Float.infinity
         animation.toValue = 0.1
         animation.fromValue = 1
@@ -95,23 +95,23 @@ class ViewController: UIViewController {
         mainLayer = CAReplicatorLayer()
         mainLayer.bounds = view.bounds
         mainLayer.position = view.center
-        mainLayer.instanceCount = 20
+        mainLayer.instanceCount = 5
         mainLayer.instanceDelay = 0.1
         mainLayer.instanceColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0).CGColor
-        mainLayer.instanceGreenOffset = 0.3
+        mainLayer.instanceGreenOffset = -0.03
         view.layer.addSublayer(mainLayer)
 
-        var layer = CALayer()
+        let layer = CALayer()
         layer.bounds = CGRect(x: 0, y: 0, width: 10, height: 10)
-        layer.backgroundColor = UIColor.grayColor().CGColor
-        layer.borderColor = UIColor.blackColor().CGColor
+        layer.backgroundColor = UIColor(white: 0.8, alpha: 1.0).CGColor
+        layer.borderColor = UIColor(white: 1.0, alpha: 1.0).CGColor
         layer.cornerRadius = 5
         layer.borderWidth = 1
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.mainScreen().scale
         mainLayer.addSublayer(layer)
 
-        var animation = CAKeyframeAnimation(keyPath: "position")
+        let animation = CAKeyframeAnimation(keyPath: "position")
         animation.path = path()
         animation.repeatCount = Float.infinity
         animation.duration = 4
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
     }
 
     func path() -> CGPath {
-        var bezierPath = UIBezierPath()
+        let bezierPath = UIBezierPath()
         bezierPath.moveToPoint(CGPointMake(31.5,71.5))
         bezierPath.addLineToPoint(CGPointMake(31.5,23.5))
         bezierPath.addCurveToPoint(CGPointMake(58.5,38.5),controlPoint1:CGPointMake(31.5,23.5),controlPoint2:CGPointMake(62.46,18.69))
@@ -135,7 +135,7 @@ class ViewController: UIViewController {
         bezierPath.closePath()
 
         var T = CGAffineTransformMakeScale(3.0,3.0)
-        return CGPathCreateCopyByTransformingPath(bezierPath.CGPath, &T)
+        return CGPathCreateCopyByTransformingPath(bezierPath.CGPath, &T)!
     }
 }
 

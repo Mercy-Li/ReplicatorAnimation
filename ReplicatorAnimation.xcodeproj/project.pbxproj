@@ -156,6 +156,8 @@
 		F2341D401B96CD19007B1098 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Daniel_Li;
 				TargetAttributes = {
@@ -409,6 +411,7 @@
 				F2341D691B96CD19007B1098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2341D6A1B96CD19007B1098 /* Build configuration list for PBXNativeTarget "ReplicatorAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				F2341D6C1B96CD19007B1098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
